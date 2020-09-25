@@ -8,16 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yc.crbook.bean.CrCart;
-import com.yc.crbook.bean.CrUser;
-import com.yc.crbook.bean.Result;
-
 @FeignClient("cruser")
 public interface IUserAction {
 	
 	/**
 	 * Feigin 要求对象参数标注 @RequestBody 注解 
-	 */
+	 
 	@PostMapping("user/login")
 	Result<CrUser> login(@RequestBody CrUser user);
 	
@@ -26,5 +22,5 @@ public interface IUserAction {
 	
 	@GetMapping("cart/findByUid")
 	List<CrCart> findByUid(@RequestParam Integer uid);
-
+*/
 }
