@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.com"   xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>当当网注册页面</title>
@@ -79,7 +79,9 @@
 </div>
 <!--网站版权部分开始-->
 <div id="footer">
-    <iframe src="footer.html" height="50px" width="900px" frameborder="0"></iframe>
+    <div class="footer_top"><a href="#" target="_parent" class="footer_dull_red">公司简介</a> | <a href="#" target="_parent" class="footer_dull_red">诚证英才</a> | <a href="#" target="_parent" class="footer_dull_red">网站联盟</a> | <a href="#" target="_parent" class="footer_dull_red">百货招商</a> | <a href="#" target="_parent" class="footer_dull_red">交易条款</a></div>
+        <iframe th:replace="footer.html" height="50px" width="900px" frameborder="0"></iframe>
+    
 </div>
 </body>
 </html>
