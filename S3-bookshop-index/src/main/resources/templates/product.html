@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="www.thymeleaf.com"   xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>当当网商品展示页面</title>
@@ -9,7 +9,12 @@
     <script type="text/javascript" src="js/product.js"></script>
 </head>
 <body>
-<div id="header"><iframe src="header.html" height="155px" width="960px" frameborder="0"></iframe></div>
+
+<!--头部iframe引入-->
+<div id="header">
+    <iframe th:replace="header.html" height="155px" width="960px" frameborder="0"></iframe>
+</div>
+
 <!--中间部分开始-->
 <div id="main">
     <div class="dd_index_top_adver"><img src="images/dd_index_top_adver.jpg" alt="通栏广告图片" /></div>
