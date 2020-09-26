@@ -17,12 +17,6 @@ public class IndexAction {
 	public String book() {
 		return "book";
 	}
-	
-
-	@GetMapping("/book")
-	public String book() {
-		return "book";
-	}
 }
 
 
