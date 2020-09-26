@@ -116,14 +116,15 @@
 }
 #menu_white{
     float:left;
-    background-image:url(../images/dd_head_bg_mid.gif);
+    
+    background-color:#ff4242;
     background-repeat:repeat-x;
     background-position:0px -63px;
     height:27px;
     width:99%;
     line-height:28px;
     text-align:center;
-    color:#FFF;
+    color:#ffffff;
 }
 .menu_mid_white,.menu_mid_white:hover{
     color:#FFF;

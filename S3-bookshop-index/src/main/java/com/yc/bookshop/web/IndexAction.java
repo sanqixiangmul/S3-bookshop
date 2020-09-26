@@ -9,6 +9,7 @@ public class IndexAction {
 	public String index() {
 		return "index";
 	}
+
 	
 	@GetMapping(path= {"tologin","login.html"})
 	public String tologin() {
@@ -39,8 +40,7 @@ public class IndexAction {
 
 
 
-	
-	
-	
 
 }
+
+
