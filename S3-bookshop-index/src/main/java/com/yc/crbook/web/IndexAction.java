@@ -9,5 +9,12 @@ public class IndexAction {
 	public String index() {
 		return "index";
 	}
+	@GetMapping("/book")
+	public String book() {
+		return "book";
+	}
+	
 
 }
+
+
