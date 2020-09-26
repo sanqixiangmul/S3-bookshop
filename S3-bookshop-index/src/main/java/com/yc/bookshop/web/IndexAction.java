@@ -10,4 +10,8 @@ public class IndexAction {
 		return "index";
 	}
 
+	@GetMapping("/book")
+	public String book() {
+		return "book";
+	}
 }
