@@ -9,7 +9,12 @@
     <script type="text/javascript" src="js/product.js"></script>
 </head>
 <body>
-<div id="header"><iframe src="header.html" height="155px" width="960px" frameborder="0"></iframe></div>
+
+<!--头部iframe引入-->
+<div id="header">
+    <iframe th:replace="header.html" height="155px" width="960px" frameborder="0"></iframe>
+</div>
+
 <!--中间部分开始-->
 <div id="main">
     <div class="dd_index_top_adver"><img src="images/dd_index_top_adver.jpg" alt="通栏广告图片" /></div>
