@@ -17,10 +17,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 @MapperScan("com.yc.bookshop.dao")
 @EnableFeignClients
-public class BsbookApplication implements WebMvcConfigurer {
+public class BsBookApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BsbookApplication.class, args);
+		SpringApplication.run(BsBookApplication.class, args);
 	}
 	
 	/**
