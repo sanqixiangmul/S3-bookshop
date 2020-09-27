@@ -10,10 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableEurekaServer
 @SpringBootApplication
-public class CrEurekaApplication implements WebMvcConfigurer {
+public class BsEurekaApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrEurekaApplication.class, args);
+		SpringApplication.run(BsEurekaApplication.class, args);
 	}
 	
 	/**
