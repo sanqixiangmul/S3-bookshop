@@ -11,6 +11,7 @@ import com.yc.bookshop.bean.Booktype;
 @FeignClient("crbook")
 public interface IBookAction {
 	
+	
 	/**@GetMapping("book/getNewBooks")
 	List<CrBook> getNewBooks();
 	
@@ -23,7 +24,11 @@ public interface IBookAction {
 	 
 	@GetMapping("book/getById")
 	CrBookWithBLOBs getById(@RequestParam int id);*/
+	
 	@GetMapping("book/findByBtid")
 	List<Booktype> findByBtid(@RequestParam Integer bt_id);
 
+	@GetMapping("product/getBooktypes")
+	List<Booktype> getBooktypes();
+	
 }

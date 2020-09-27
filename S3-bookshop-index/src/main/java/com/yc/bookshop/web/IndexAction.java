@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.yc.bookshop.web.remote.IBookAction;
 
@@ -32,6 +33,11 @@ public class IndexAction {
 	
 	@GetMapping(path= {"toproduct","product.html"})
 	public String toproduct() {
+		return "product";
+	}
+	
+	@PostMapping("product")
+	public String product() {
 		return "product";
 	}
 	
