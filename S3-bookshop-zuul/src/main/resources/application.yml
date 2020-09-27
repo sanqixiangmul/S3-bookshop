@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-     name: crzuul
+     name: bszuul
      
 zuul:
    # 敏感头设置: 1. zuul 默认情况下回屏蔽某些http请求头域值, 2.要通过设置开启敏感头不过滤

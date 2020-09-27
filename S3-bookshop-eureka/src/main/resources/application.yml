@@ -4,7 +4,7 @@ server:
 # 定义当前服务名
 spring:
    application:
-      name: creureka
+      name: bseureka
       
 eureka:
    client:
