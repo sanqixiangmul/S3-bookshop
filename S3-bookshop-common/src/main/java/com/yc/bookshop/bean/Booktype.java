@@ -6,7 +6,7 @@ public class Booktype {
     private String btName;
 
     private Integer btPid;
-
+ 
     public Integer getBtId() {
         return btId;
     }

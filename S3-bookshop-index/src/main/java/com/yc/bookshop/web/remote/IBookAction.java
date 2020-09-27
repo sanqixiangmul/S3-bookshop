@@ -6,6 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.yc.bookshop.bean.Booktype;
+
 @FeignClient("crbook")
 public interface IBookAction {
 	
@@ -21,5 +23,7 @@ public interface IBookAction {
 	 
 	@GetMapping("book/getById")
 	CrBookWithBLOBs getById(@RequestParam int id);*/
+	@GetMapping("book/findByBtid")
+	List<Booktype> findByBtid(@RequestParam Integer bt_id);
 
 }
