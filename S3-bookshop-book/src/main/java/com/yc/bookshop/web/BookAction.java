@@ -14,7 +14,6 @@ import com.yc.bookshop.bean.Book;
 import com.yc.bookshop.bean.BookExample;
 import com.yc.bookshop.bean.Booktype;
 import com.yc.bookshop.bean.BooktypeExample;
-import com.yc.bookshop.bean.Cart;
 import com.yc.bookshop.bean.Show;
 import com.yc.bookshop.bean.ShowExample;
 import com.yc.bookshop.dao.BookMapper;
@@ -35,16 +34,17 @@ public class BookAction {
 	private ShowMapper cMapper;
 	
 	@GetMapping("findByBtid")
-	public List<Booktype> findByBtid(@RequestBody Booktype booktype) {
+	List<Booktype> findByBtid() {
 		BooktypeExample exa = new BooktypeExample();
-		exa.createCriteria().andBtIdEqualTo(booktype.getBtId());
+		exa.createCriteria().andBtIdBetween(1, 13);
 		return btMapper.selectByExample(exa);
 	}
 	
+	
 	@GetMapping("findById")
-	List<Show> findByCnt(@RequestParam int id) {
+	List<Show> findByCnt(@RequestParam int b_id) {
 		ShowExample exa = new ShowExample();
-		exa.createCriteria().andBIdEqualTo(id);
+		exa.createCriteria().andBIdEqualTo(b_id);
 		return cMapper.selectByExample(exa);
 	}
 
@@ -53,5 +53,12 @@ public class BookAction {
 		BookExample ex = new BookExample();
 		ex.createCriteria().andBtIdEqualTo(book.getBtId());
 		return bMapper.selectByExample(ex);
+	}
+	
+	@GetMapping("findByBtid2")
+	public List<Booktype> findByBtid2(@RequestBody Booktype booktype) {
+		BooktypeExample exa = new BooktypeExample();
+		exa.createCriteria().andBtIdEqualTo(booktype.getBtId());
+		return btMapper.selectByExample(exa);
 	}
 }

@@ -22,6 +22,7 @@ public class IndexAction {
 	@Resource
 	private IBookAction baction;
 	
+	
 	@GetMapping("/")
 	public String index() {
 		return "index";
@@ -49,12 +50,12 @@ public class IndexAction {
 		// 1 定义一个接口,用于访问远程服务
 		// 2 调用远程服务
 		List<Book> findByBtid1 = baction.findByBtid1(booktype.getBook());
-		List<Booktype> findByBtid = baction.findByBtid(booktype);
+		List<Booktype> findByBtid2 = baction.findByBtid2(booktype);
 		if(booktype.getBtId() == null ) {
 			errors.rejectValue("btId", "btIdErrors", "未传入id值");
 		}else {
 			// 推送给页面
-			m.addAttribute("findByBtid", findByBtid);
+			m.addAttribute("findByBtid2", findByBtid2);
 			m.addAttribute("findByBtid1", findByBtid1);
 		}
 		return "product";
@@ -70,14 +71,19 @@ public class IndexAction {
 	public String toregister() {
 		return "register";
 	}
-	/*暂时忽略
+
+	/*
 	 * @GetMapping(path = { "book", "book.html" }) public String book(int bt_id,
 	 * Model m) { m.addAttribute("book", baction.findByBtid(bt_id)); return "book";
 	 * }
 	 */
 	
-
-
+	@GetMapping(path = { "index", "index.html" })
+	public String bookType( Model m) {
+		m.addAttribute("booktype", baction.findByBtid());
+		return "index";
+	}
+	
 
 
 

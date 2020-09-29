@@ -29,31 +29,12 @@
             <div class="book_sort_bottom" style="border-bottom:0px;">外语 | 中小学教辅 |</div>
         </div>
         <!--图书商品分类开始-->
-        <div class="book_sort">
+        <div class="book_sort"  >
             <div class="book_sort_bg"><img src="images/dd_book_cate_icon.gif" alt="图书" /> 图书商品分类</div>
-            <div class="book_cate">[小说]</div>
-            <div class="book_sort_bottom">悬疑 | 言情 | 职场 | 财经</div>
-            <div class="book_cate">[文艺]</div>
-            <div class="book_sort_bottom">文学 | 传记 | 艺术 | 摄影</div>
-            <div class="book_cate">[青春]</div>
-            <div class="book_sort_bottom">青春文学 | 动漫 | 幽默</div>
-            <div class="book_cate">[励志/成功]</div>
-            <div class="book_sort_bottom">修养 | 成功 | 职场 | 沟通</div>
-            <div class="book_cate">[少儿]</div>
-            <div class="book_sort_bottom">0-2 | 3-6 | 7-10 | 11-14<br />文学 | 科普 | 图画书</div>
-            <div class="book_cate">[生活]</div>
-            <div class="book_sort_bottom">保健 | 家教 | 美丽装扮 | 育儿 | 美食 | 旅游 | 收藏 | 生活 | 体育 | 地图 | 个人理财</div>
-            <div class="book_cate">[个人社科]</div>
-            <div class="book_sort_bottom">文化 | 历史 | 哲学/宗教 | 古籍 | 政治/历史 | 法律 | 经济 | 社会科学 | 心理学</div>
-            <div class="book_cate">[管理]</div>
-            <div class="book_sort_bottom">管理 | 金融 | 营销 | 会计</div>
-            <div class="book_cate">[科技]</div>
-            <div class="book_sort_bottom">科普 | 建筑 | 医学 | 计算机 | 农林 | 自然科学 | 工业 | 通信</div>
-            <div class="book_cate">[教育]</div>
-            <div class="book_sort_bottom">教材 | 中小学教辅 | 外语</div>
-            <div class="book_cate">[工具书]</div>
-            <div class="book_cate">[图外原版书]</div>
-            <div class="book_cate">[期刊]</div>
+            <div class="book_cate" th:each="a : ${booktype}" th:text="${a.btName}">[小说]</div>
+           
+            
+           
         </div>
         <!--图书商品分类结束-->
     </div>

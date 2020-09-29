@@ -29,11 +29,15 @@ public interface IBookAction {
 	@GetMapping("book/getById")
 	CrBookWithBLOBs getById(@RequestParam int id);*/
 	
-	@GetMapping("book/findByBtid")
-	List<Booktype> findByBtid(@RequestBody Booktype booktype);
+	@GetMapping("book/findByBtid2")
+	List<Booktype> findByBtid2(@RequestBody Booktype booktype);
 
 	@GetMapping("book/findByBtid1")
 	List<Book> findByBtid1(@RequestBody Book Book);
+
+	@GetMapping("book/findByBtid")
+	List<Booktype> findByBtid();
+
 
 	
 }
