@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.yc.bookshop.bean.Booktype;
 import com.yc.bookshop.bean.BooktypeExample;
-import com.yc.bookshop.bean.Cart;
 import com.yc.bookshop.bean.Show;
 import com.yc.bookshop.bean.ShowExample;
 import com.yc.bookshop.dao.BooktypeMapper;
@@ -27,16 +26,17 @@ public class BookAction {
 	private ShowMapper cMapper;
 	
 	@GetMapping("findByBtid")
-	List<Booktype> findByBtid(@RequestParam int bt_id) {
+	List<Booktype> findByBtid() {
 		BooktypeExample exa = new BooktypeExample();
-		exa.createCriteria().andBtIdEqualTo(bt_id);
+		exa.createCriteria().andBtIdBetween(1, 13);
 		return btMapper.selectByExample(exa);
 	}
 	
+	
 	@GetMapping("findById")
-	List<Show> findByCnt(@RequestParam int id) {
+	List<Show> findByCnt(@RequestParam int b_id) {
 		ShowExample exa = new ShowExample();
-		exa.createCriteria().andBIdEqualTo(id);
+		exa.createCriteria().andBIdEqualTo(b_id);
 		return cMapper.selectByExample(exa);
 	}
 

@@ -15,6 +15,7 @@ public class IndexAction {
 	@Resource
 	private IBookAction baction;
 	
+	
 	@GetMapping("/")
 	public String index() {
 		return "index";
@@ -50,10 +51,16 @@ public class IndexAction {
 	public String toregister() {
 		return "register";
 	}
-	@GetMapping(path = { "book", "book.html" })
-	public String book(int bt_id, Model m) {
-		m.addAttribute("book", baction.findByBtid(bt_id));
-		return "book";
+	/*
+	 * @GetMapping(path = { "book", "book.html" }) public String book(int bt_id,
+	 * Model m) { m.addAttribute("book", baction.findByBtid(bt_id)); return "book";
+	 * }
+	 */
+	
+	@GetMapping(path = { "index", "index.html" })
+	public String bookType( Model m) {
+		m.addAttribute("booktype", baction.findByBtid());
+		return "index";
 	}
 	
 

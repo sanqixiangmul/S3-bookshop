@@ -15,13 +15,13 @@ zuul:
          path: /simple/163
          url: http://www.163.com
       # crbook 服务名映射 到 book
-      crbook: /book/**
+      bsbook: /book/**
       # cruser 服务名映射 到 user
-      cruser: /user/**
+      bsuser: /user/**
       # 默认路由
       base:
          path: /**
-         serviceId: crindex
+         serviceId: bsindex
 
 # 解决 zuul 网关报错的问题
 hystrix:
