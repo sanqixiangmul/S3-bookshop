@@ -65,7 +65,12 @@ public class BookAction {
 	@GetMapping("findByBtid2")
 	public List<Booktype> findByBtid2(@RequestBody Booktype booktype) {
 		BooktypeExample exa = new BooktypeExample();
-		exa.createCriteria().andBtIdEqualTo(booktype.getBtId());
+		//当BtPid为空时，只查询为空的数据
+		if(booktype.getBtPid() == null) {
+			exa.createCriteria().andBtIdEqualTo(booktype.getBtId());
+		}else {
+			exa.createCriteria().andBtIdEqualTo(booktype.getBtPid());
+		}
 		return btMapper.selectByExample(exa);
 	}
 }
