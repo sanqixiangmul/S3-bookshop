@@ -2,15 +2,11 @@ package com.yc.bookshop.web.remote;
 
 import java.util.List;
 
-import javax.validation.Valid;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
-=======
 import org.springframework.web.bind.annotation.RequestBody;
->>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yc.bookshop.bean.Book;

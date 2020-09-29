@@ -5,11 +5,8 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
-=======
 import org.springframework.web.bind.annotation.RequestBody;
->>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,10 +27,6 @@ public class BookAction {
 	
 	@Resource
 	private BooktypeMapper btMapper;
-	
-	@Resource
-	private BookMapper bMapper;
-	
 	@Resource
 	private BookMapper bMapper;
 	@Resource
