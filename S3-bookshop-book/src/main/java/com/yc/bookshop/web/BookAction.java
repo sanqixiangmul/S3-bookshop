@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,13 +27,12 @@ public class BookAction {
 	
 	@Resource
 	private BooktypeMapper btMapper;
-	
 	@Resource
 	private BookMapper bMapper;
-	
 	@Resource
 	private ShowMapper cMapper;
 	
+	//通过btid的范围查询图书种类的名称bt_name
 	@GetMapping("findByBtid")
 	List<Booktype> findByBtid() {
 		BooktypeExample exa = new BooktypeExample();
@@ -40,6 +40,13 @@ public class BookAction {
 		return btMapper.selectByExample(exa);
 	}
 	
+	//模糊查询
+	@PostMapping("findByBname")
+	List<Book> findByBname(@RequestParam String b_name) {
+		BookExample exa = new BookExample();
+		exa.createCriteria().andBNameLike("%"+b_name+"%");
+		return bMapper.selectByExample(exa);
+	}
 	
 	@GetMapping("findById")
 	List<Show> findByCnt(@RequestParam int b_id) {

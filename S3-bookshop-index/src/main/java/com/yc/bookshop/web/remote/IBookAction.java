@@ -2,10 +2,10 @@ package com.yc.bookshop.web.remote;
 
 import java.util.List;
 
-import javax.validation.Valid;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,6 +37,9 @@ public interface IBookAction {
 
 	@GetMapping("book/findByBtid")
 	List<Booktype> findByBtid();
+	
+	@PostMapping("book/findByBname")
+	List<Book> findByBname(@RequestParam String b_name);
 
 
 	

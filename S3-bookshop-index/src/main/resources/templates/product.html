@@ -81,8 +81,13 @@
             <div th:each="book,s : ${findByBtid1}">
             <div class="product_storyList_content_left"><img src="images/product_list_01.jpg" alt="图书列表"/></div>
             <div class="product_storyList_content_right">
+<<<<<<< HEAD
+                <ul th:each="a : ${book}" >
+                    <li class="product_storyList_content_dash" th:text="${a.bName}"><a href="#" class="blue_14"  >私募（首部披露资本博弈秘密的金融小说）</a></li>
+=======
                 <ul>
                     <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${book.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
                     <li>顾客评分：<img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_gray.gif" alt="star"/></li>
                     <li>作　者：<a href="#" class="blue_14" th:text="${book.bAuthor}">郭现杰</a> 著</li>
                     <li>出版社：<a href="#" class="blue_14" th:text="${book.bPublisher}">花山文艺出版社</a></li>
@@ -102,7 +107,12 @@
             </div>
             <div class="product_storyList_content_bottom"></div>
             
+<<<<<<< HEAD
+           
+
+=======
             </div>
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
             <div>
                 <dl class="product_content_dd">
                     <dd><img src="images/OK.gif" alt="ok"/></dd>
