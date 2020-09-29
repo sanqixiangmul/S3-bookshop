@@ -32,10 +32,7 @@ public class IndexAction {
 		return "index";
     }
 	
-	@GetMapping(path= {"toproduct","product.html"})
-	public String toproduct() {
-		return "product";
-	}
+	
 	
 	@PostMapping("product")
 	public String product() {
@@ -57,10 +54,17 @@ public class IndexAction {
 	 * }
 	 */
 	
-	@GetMapping(path = { "index", "index.html" })
+	@GetMapping(path = { "index", "index.html","/" })
 	public String bookType( Model m) {
 		m.addAttribute("booktype", baction.findByBtid());
 		return "index";
+	}
+	
+	
+	@PostMapping(path = { "product.do", "product.html" })
+	public String books(String b_name, Model m) {
+		m.addAttribute("book", baction.findByBname(b_name));
+		return "product";
 	}
 	
 

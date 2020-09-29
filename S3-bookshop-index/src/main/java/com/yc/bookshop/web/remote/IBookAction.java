@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.yc.bookshop.bean.Book;
 import com.yc.bookshop.bean.Booktype;
 
 @FeignClient("bsbook")
@@ -27,6 +29,9 @@ public interface IBookAction {
 	
 	@GetMapping("book/findByBtid")
 	List<Booktype> findByBtid();
+	
+	@PostMapping("book/findByBname")
+	List<Book> findByBname(@RequestParam String b_name);
 
 	
 }
