@@ -18,18 +18,26 @@
 <!--中间部分开始-->
 <div id="main">
     <div class="dd_index_top_adver"><img src="images/dd_index_top_adver.jpg" alt="通栏广告图片" /></div>
-    <div class="current_place">您现在的位置：<a href="index.html">当当图书</a> &gt;&gt; 小说 &gt;&gt; 财经</div>
+    <div class="current_place">您现在的位置：<a th:href="index.html">当当图书</a> &gt;&gt; 小说 &gt;&gt; 财经
+    </div>
+    
     <!--左侧菜单开始-->
-    <div id="product_left">
-        <div id="product_catList">
+    <div id="product_left" >
+        <div id="product_catList" th:each="book,s : ${findByBtid}">
             <div class="product_catList_top">浏览同级分类</div>
-            <div id="product_catList_class"><!--使用javaScript显示图书分类--></div>
+            <div id="product_catList_class">
+            	<li> 
+            		<a href='#' class='blue' th:text="${book.btName}"></a>
+            	</li>
+            	<!--使用javaScript显示图书分类-->
+            </div>
         </div>
         <div class="product_catList_end">
             <img src="images/product_01.gif" alt="shopping"/>
             <img src="images/product_02.gif" alt="shopping"/>
         </div>
     </div>
+   
     <!--右侧内容开始-->
     <div id="product_storyList">
         <div id="product_storyList_top">
@@ -70,20 +78,26 @@
         <div id="product_storyList_content" class="product_storyList_content">
             <div id="storyBooksssss"><!--使用javaScript显示图书列表--></div>
             <!--列表开始-->
+            <div th:each="book,s : ${findByBtid1}">
             <div class="product_storyList_content_left"><img src="images/product_list_01.jpg" alt="图书列表"/></div>
             <div class="product_storyList_content_right">
+<<<<<<< HEAD
                 <ul th:each="a : ${book}" >
                     <li class="product_storyList_content_dash" th:text="${a.bName}"><a href="#" class="blue_14"  >私募（首部披露资本博弈秘密的金融小说）</a></li>
+=======
+                <ul>
+                    <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${book.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
                     <li>顾客评分：<img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_gray.gif" alt="star"/></li>
-                    <li>作　者：<a href="#" class="blue_14">郭现杰</a> 著</li>
-                    <li>出版社：<a href="#" class="blue_14">花山文艺出版社</a></li>
-                    <li>出版时间：2009年08月</li>
-                    <li>数年前，在一次股市的多、空之战中，以赵云狄、林康为首的私募基金―金鼎投资，和以王雨龙为首的私募基金，达成锁仓协议分食利益。殊料，以王雨龙为首的私募基金―鑫利投资背信弃义，导致金鼎投资惨败。以至...</li>
+                    <li>作　者：<a href="#" class="blue_14" th:text="${book.bAuthor}">郭现杰</a> 著</li>
+                    <li>出版社：<a href="#" class="blue_14" th:text="${book.bPublisher}">花山文艺出版社</a></li>
+                    <li>出版时间：<a href="#" class="blue_14">2009年08月</a></li>
+                    <li><a href="#" class="blue_14" th:text="${book.bMark}">数年前，在一次股市的多、空之战中，以赵云狄、林康为首的私募基金―金鼎投资，和以王雨龙为首的私募基金，达成锁仓协议分食利益。殊料，以王雨龙为首的私募基金―鑫利投资背信弃义，导致金鼎投资惨败。以至...</a></li>
                     <li>
                         <dl class="product_content_dd">
                             <dd><img src="images/product_buy_02.gif" alt="shopping"/></dd>
                             <dd><img src="images/product_buy_01.gif" alt="shopping"/></dd>
-                            <dd>节省：￥13.10</dd>
+                            <dd>节省：<a>￥13.10</a></dd>
                             <dd>折扣：<span>59折</span></dd>
                             <dd class="footer_dull_red"><span>￥18.90</span></dd>
                             <dd class="product_content_delete"><span>￥32.00</span></dd>
@@ -93,8 +107,12 @@
             </div>
             <div class="product_storyList_content_bottom"></div>
             
+<<<<<<< HEAD
            
 
+=======
+            </div>
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
             <div>
                 <dl class="product_content_dd">
                     <dd><img src="images/OK.gif" alt="ok"/></dd>
