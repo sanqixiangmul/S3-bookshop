@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yc.bookshop.bean.Cart;
 
-@FeignClient("cruser")
+@FeignClient("bsuser")
 public interface IUserAction {
 	
 	/**

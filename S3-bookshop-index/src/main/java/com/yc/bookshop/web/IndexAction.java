@@ -5,23 +5,16 @@ import java.util.List;
 
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.bookshop.bean.Cart;
-import com.yc.bookshop.bean.User;
 import com.yc.bookshop.web.remote.IUserAction;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.yc.bookshop.bean.Book;
-import com.yc.bookshop.bean.Booktype;
 import com.yc.bookshop.web.remote.IBookAction;
 
 
@@ -49,13 +42,6 @@ public class IndexAction {
 	public String toindex() {
 		return "index";
     }
-	
-	
-	
-	@GetMapping(path= {"toshopping","shopping.html"})
-	public String toshopping() {
-		return "shopping";
-	}
 	
 	@GetMapping(path= {"toregister","register.html"})
 	public String toregister() {
