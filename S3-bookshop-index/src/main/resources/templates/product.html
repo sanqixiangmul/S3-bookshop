@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="product_catList_end">
-            <img src="images/product_01.gif" alt="shopping"/>
+            <img  src="images/product_01.gif" alt="shopping"/>
             <img src="images/product_02.gif" alt="shopping"/>
         </div>
     </div>
@@ -99,8 +99,8 @@
                     <li><a href="#" class="blue_14" th:text="${a.bMark}">数年前，在一次股市的多、空之战中，以赵云狄、林康为首的私募基金―金鼎投资，和以王雨龙为首的私募基金，达成锁仓协议分食利益。殊料，以王雨龙为首的私募基金―鑫利投资背信弃义，导致金鼎投资惨败。以至...</a></li>
                     <li>
                         <dl class="product_content_dd">
-                            <dd><img src="images/product_buy_02.gif" alt="shopping"/></dd>
-                            <dd><img src="images/product_buy_01.gif" alt="shopping"/></dd>
+                            <dd><img th:href='shopping.html' src="images/product_buy_02.gif" alt="shopping"/></dd>
+                            <dd ><a  href="shopping.html" target="_parent"><img  src="images/product_buy_01.gif" alt="shopping"/></a> </dd>
                             <dd>折后价：<a th:text="${#numbers.formatDecimal(a.bPrice*0.59,1,2)}">￥13.10</a></dd>
                             <dd>折扣：<span>59折</span></dd>
                             <dd class="footer_dull_red"><span>￥18.90</span></dd>
