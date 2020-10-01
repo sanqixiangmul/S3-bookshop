@@ -40,8 +40,8 @@ public class IndexAction {
     }
 	
 	
-	
-	@GetMapping(path= {"product"})
+/*
+   @GetMapping(path= {"product"})
 	public String product(@Valid Booktype booktype,Errors errors, Model m) {
 		// 使用 FeIgn 远程调用 book 的服务
 		// 1 定义一个接口,用于访问远程服务
@@ -57,6 +57,10 @@ public class IndexAction {
 		}
 		return "product";
 	}
+	
+ 
+ 
+ */
 	
 	
 	@GetMapping(path= {"toshopping","shopping.html"})
