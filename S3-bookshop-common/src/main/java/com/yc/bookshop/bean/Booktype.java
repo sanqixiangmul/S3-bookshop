@@ -1,6 +1,6 @@
 package com.yc.bookshop.bean;
 
-public class Booktype {
+public class Booktype implements java.io.Serializable{
     private Integer btId;
 
     private String btName;

@@ -6,11 +6,15 @@ spring:
    application:
       name: cruser
    datasource:
-      url: jdbc:mysql://127.0.0.1:3307/bookshop?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://127.0.0.1:3306/bookshop?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
       username: root
       password: a
       driver-class-name: com.mysql.jdbc.Driver
 
 logging:
    level:
-      com.yc.crbook.dao: debug
+      com.yc.bookshop.dao: debug
+      
+mybatis:
+   configuration:
+      mapUnderscoreToCamelCase: true

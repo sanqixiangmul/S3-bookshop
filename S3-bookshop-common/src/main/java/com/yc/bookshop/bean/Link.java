@@ -1,6 +1,6 @@
 package com.yc.bookshop.bean;
 
-public class Link {
+public class Link implements java.io.Serializable{
     private Integer id;
 
     private String url;

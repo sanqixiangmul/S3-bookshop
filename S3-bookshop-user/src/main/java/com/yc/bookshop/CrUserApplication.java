@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // 服务降级注解
 @EnableCircuitBreaker
 @SpringBootApplication
-@MapperScan("com.yc.crbook.dao")
+@MapperScan("com.yc.bookshop.dao")
 @EnableFeignClients
 public class CrUserApplication implements WebMvcConfigurer {
 

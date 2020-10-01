@@ -1,6 +1,6 @@
 package com.yc.bookshop.bean;
 
-public class Show {
+public class Show implements java.io.Serializable{
     private Integer id;
 
     private String page;

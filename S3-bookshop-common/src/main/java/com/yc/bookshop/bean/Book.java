@@ -2,8 +2,13 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
-public class Book {
-    private Integer bId;
+public class Book implements java.io.Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer bId;
 
     private String bIsbn;
 

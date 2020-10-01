@@ -1,6 +1,6 @@
 package com.yc.bookshop.bean;
 
-public class Orderitem {
+public class Orderitem implements java.io.Serializable{
     private Integer oiId;
 
     private Float oiPrice;

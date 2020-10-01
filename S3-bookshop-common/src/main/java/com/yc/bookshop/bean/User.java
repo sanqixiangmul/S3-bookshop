@@ -2,7 +2,7 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
-public class User {
+public class User implements java.io.Serializable{
     private Integer uId;
 
     private String uName;
