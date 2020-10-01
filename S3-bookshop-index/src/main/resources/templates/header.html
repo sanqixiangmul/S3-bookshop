@@ -7,17 +7,19 @@
     <link href="css/template.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
 </head>
 <body>
 <!--顶部开始-->
 <div>
 <div class="header_top">
-    <div class="header_top_left">您好！欢迎光临当当网 [<a href="login.html" target="_parent">登录</a> | <a href="register.html" target="_parent">免费注册</a>]</div>
+    <div class="header_top_left">您好！欢迎光临百草网 [<a href="login.html" target="_parent">登录</a> | <a href="register.html" target="_parent">免费注册</a>]</div>
     <div class="header_top_right">
         <ul>
             <li><a href="#" target="_self">帮助</a></li>
             <li>|</li>
-            <li id="menu"><a href="#" target="_self">我的当当</a> <img src="images/dd_arrow_down.gif" alt="arrow" />
+            <li id="menu"><a href="#" target="_self">我的百草园</a> <img src="images/dd_arrow_down.gif" alt="arrow" />
                 <div id="dd_menu_top_down">
                     <a href="#" target="_self">我的订单</a><br />
                     <a href="#" target="_self">账户余额</a><br />
@@ -32,7 +34,7 @@
             <li>|</li>
             <li><a href="#" target="_self">个性化推荐</a></li>
             <li>|</li>
-            <li><a href="shopping.html" target="_parent">购物车</a></li>
+            <li><a  href="shopping.html" target="_parent">购物车</a></li>
             <li><img src="images/dd_header_shop.gif" alt="shopping"/></li>
         </ul>
     </div>
@@ -101,12 +103,13 @@
     </div>
 </div>
 <!--搜索开始-->
-<div class="header_search">
+<div class="header_search" id="ff">
     <div class="header_serach_left"></div>
     <div class="header_serach_mid">
-        <ul id="header_serach_mid_menu">
-            <li><input id="header_serach" type="text" class="header_input_search" /></li>
-            <li><input type="image" class="header_secrch_btn" src="images/dd_header_search_btn.jpg" /></li>
+    <form action="product.do" method="post">
+    <ul id="header_serach_mid_menu">
+            <li><input name="b_name" id="header_serach" type="text" class="header_input_search" /></li>
+            <li><input v-model="b_name" type="submit"   class="header_secrch_btn" src="images/dd_header_search_btn.jpg" /></li>
             <li><img src="images/dd_arrow_right.gif" alt="arrow"/> <a href="#" target="_self">高级搜索</a></li>
             <li>|</li>
             <li><img src="images/dd_header_search_top.jpg" alt="搜索风云榜"/></li>
@@ -122,6 +125,8 @@
             <li>|</li>
             <li><a href="#" target="_self">更多&gt;&gt;</a></li>
         </ul>
+    </form>
+        
 
 
     </div>

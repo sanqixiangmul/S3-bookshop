@@ -4,9 +4,13 @@ server:
 # 定义当前服务名
 spring:
    application:
-      name: creureka
+      name: bseureka
       
 eureka:
    client:
       registerWithEureka: false
       fetchRegistry: false
+      
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

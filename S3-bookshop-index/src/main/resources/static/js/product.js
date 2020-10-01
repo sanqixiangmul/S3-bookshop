@@ -1,7 +1,7 @@
 
 $(function($){
     //图书分类动态展示
-    function productList(){
+	/*function productList(){
         var list=new Array(
             "中国当代小说（13880）","中国近现代小...（640）","中国古典小说（1547）",
             "四大名著（696）","港澳台小说（838）","外国小说（5119）",
@@ -16,9 +16,9 @@ $(function($){
             html.push("<li> ·<a href='#' class='blue'>"+n+"</a></li>");
         });
         $("#product_catList_class").html(html.join(""));
-    }
+    }*/
     productList();
-    //图书动态展示
+    /*//图书动态展示
     function bookList(){
         var catalog=new Array();
         catalog[0] = ['product_list_01.jpg','私募（首部披露资本博弈秘密的金融小说）',4,'郭现杰','花山文艺出版社', '2009年08月',
@@ -57,7 +57,7 @@ $(function($){
             html+="<div class='product_storyList_content_bottom'></div>";
         });
         $("#storyBooksssss").html(html);
-    }
+    }*/
     bookList();
     //获取列表形式List,默认是列表形式，因此先取得列表形式的内容
     var arrayBookList=$("#product_storyList_content").html();

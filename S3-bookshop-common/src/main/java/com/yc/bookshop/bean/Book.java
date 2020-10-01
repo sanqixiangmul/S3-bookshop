@@ -2,13 +2,12 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
-public class Book implements java.io.Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	private Integer bId;
+import javax.validation.constraints.NotNull;
+
+public class Book {
+	
+    private Integer bId;
 
     private String bIsbn;
 
@@ -26,6 +25,7 @@ public class Book implements java.io.Serializable{
 
     private Float bPrice;
 
+    @NotNull
     private Integer btId;
 
     private Integer bStock;

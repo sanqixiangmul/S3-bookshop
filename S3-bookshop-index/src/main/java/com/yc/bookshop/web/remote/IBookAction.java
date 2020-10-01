@@ -2,12 +2,19 @@ package com.yc.bookshop.web.remote;
 
 import java.util.List;
 
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("crbook")
+import com.yc.bookshop.bean.Book;
+import com.yc.bookshop.bean.Booktype;
+
+@FeignClient("bsbook")
 public interface IBookAction {
+	
 	
 	/**@GetMapping("book/getNewBooks")
 	List<CrBook> getNewBooks();
@@ -21,5 +28,19 @@ public interface IBookAction {
 	 
 	@GetMapping("book/getById")
 	CrBookWithBLOBs getById(@RequestParam int id);*/
+	
+	@GetMapping("book/findByBtid2")
+	List<Booktype> findByBtid2(@RequestBody Booktype booktype);
 
+	@GetMapping("book/findByBtid1")
+	List<Book> findByBtid1(@RequestBody Book Book);
+
+	@GetMapping("book/findByBtid")
+	List<Booktype> findByBtid();
+	
+	@PostMapping("book/findByBname")
+	List<Book> findByBname(@RequestParam String b_name);
+
+
+	
 }

@@ -4,7 +4,7 @@ server:
 # 定义当前服务名
 spring:
    application:
-      name: user
+      name: bsconfig
 #   redis:
 #      database: 0
 #      host: 127.0.0.1

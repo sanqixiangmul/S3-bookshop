@@ -1,13 +1,26 @@
 package com.yc.bookshop.bean;
 
-public class Booktype implements java.io.Serializable{
-    private Integer btId;
+public class Booktype implements java.io.Serializable {
+    
+	private static final long serialVersionUID = 1L;
+
+	private Integer btId;
 
     private String btName;
 
     private Integer btPid;
+    
+    private Book book;
 
-    public Integer getBtId() {
+    public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public Integer getBtId() {
         return btId;
     }
 

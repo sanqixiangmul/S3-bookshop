@@ -18,10 +18,10 @@ import com.yc.bookshop.web.LoginInterceptor;
 @EnableCircuitBreaker
 @SpringBootApplication
 @EnableFeignClients
-public class CrIndexApplication implements WebMvcConfigurer {
+public class BsIndexApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrIndexApplication.class, args);
+		SpringApplication.run(BsIndexApplication.class, args);
 	}
 	
 	/**
