@@ -43,4 +43,10 @@ public class Booktype implements java.io.Serializable {
     public void setBtPid(Integer btPid) {
         this.btPid = btPid;
     }
+
+	@Override
+	public String toString() {
+		return "Booktype [btId=" + btId + ", btName=" + btName + ", btPid=" + btPid + ", book=" + book + "]";
+	}
+    
 }

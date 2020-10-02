@@ -16,8 +16,8 @@ $(function($){
             html.push("<li> ·<a href='#' class='blue'>"+n+"</a></li>");
         });
         $("#product_catList_class").html(html.join(""));
-    }*/
-    productList();
+    }
+    productList();*/
     /*//图书动态展示
     function bookList(){
         var catalog=new Array();
@@ -57,8 +57,8 @@ $(function($){
             html+="<div class='product_storyList_content_bottom'></div>";
         });
         $("#storyBooksssss").html(html);
-    }*/
-    bookList();
+    }
+    bookList();*/
     //获取列表形式List,默认是列表形式，因此先取得列表形式的内容
     var arrayBookList=$("#product_storyList_content").html();
     //获取大图形式List
