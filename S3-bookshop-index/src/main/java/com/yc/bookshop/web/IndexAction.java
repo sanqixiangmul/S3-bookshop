@@ -101,10 +101,6 @@ public class IndexAction {
         return modelAndView;
     }
 	
-	@GetMapping(path= {"toshopping","shopping.html"})
-	public String toshopping() {
-		return "shopping";
-	}
 	
 	@GetMapping(path= {"toregister","register.html"})
 	public String toregister() {
