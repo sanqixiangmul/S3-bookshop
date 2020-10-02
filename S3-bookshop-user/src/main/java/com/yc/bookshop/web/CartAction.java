@@ -35,7 +35,6 @@ public class CartAction {
 	@GetMapping("clearCart")
 	int clearCart(@RequestParam int uid) {
 		CartExample exa=new CartExample();
-		exa.createCriteria().andUIdEqualTo(uid);
 		int c=cMapper.deleteByPrimaryKey(uid);
 		return c;
 	}
