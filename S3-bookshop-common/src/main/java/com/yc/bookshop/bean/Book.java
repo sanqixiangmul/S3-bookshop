@@ -2,7 +2,11 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
+
+import javax.validation.constraints.NotNull;
+
 public class Book {
+	
     private Integer bId;
 
     private String bIsbn;
@@ -21,6 +25,7 @@ public class Book {
 
     private Float bPrice;
 
+    @NotNull
     private Integer btId;
 
     private Integer bStock;

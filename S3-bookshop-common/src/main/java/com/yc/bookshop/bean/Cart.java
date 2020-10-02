@@ -2,8 +2,13 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
-public class Cart {
-    private Integer id;
+public class Cart implements java.io.Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private Integer uId;
 
@@ -12,8 +17,25 @@ public class Cart {
     private Integer cnt;
 
     private Date createTime;
+    
+    private Book book;
+    
 
-    public Integer getId() {
+    @Override
+	public String toString() {
+		return "Cart [id=" + id + ", uId=" + uId + ", bId=" + bId + ", cnt=" + cnt + ", createTime=" + createTime
+				+ ", book=" + book + "]";
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public Integer getId() {
         return id;
     }
 

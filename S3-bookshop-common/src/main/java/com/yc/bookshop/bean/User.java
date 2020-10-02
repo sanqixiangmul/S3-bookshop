@@ -2,10 +2,14 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
-public class User {
+
+
+public class User implements java.io.Serializable{
+
     private Integer uId;
     @NotEmpty(message = "昵称不能为空")
 

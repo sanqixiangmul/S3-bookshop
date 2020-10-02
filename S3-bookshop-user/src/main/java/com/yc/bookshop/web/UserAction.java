@@ -1,5 +1,6 @@
 package com.yc.bookshop.web;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -39,4 +40,5 @@ public class UserAction {
 		uMapper.insertSelective(user);
 		return new Result(1, "注册成功!", user);
 	}
+
 }

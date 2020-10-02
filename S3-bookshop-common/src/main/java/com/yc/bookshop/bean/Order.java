@@ -2,7 +2,7 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
-public class Order {
+public class Order implements java.io.Serializable{
     private String oId;
 
     private Float oTotal;

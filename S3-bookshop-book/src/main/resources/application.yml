@@ -13,4 +13,4 @@ spring:
 
 logging:
    level:
-      com.yc.crbook.dao: debug
+      com.yc.bookshop.dao: debug

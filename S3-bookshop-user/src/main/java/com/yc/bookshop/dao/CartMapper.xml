@@ -7,7 +7,13 @@
     <result column="b_id" jdbcType="INTEGER" property="bId" />
     <result column="cnt" jdbcType="INTEGER" property="cnt" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <association property="book" column="b_id" select="selectBook"></association>
   </resultMap>
+ 
+  <select id="selectBook" resultType="com.yc.bookshop.bean.Book">
+  	select * from book where b_id=#{bid}
+  </select>
+  	
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -91,7 +97,7 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from cart
-    where id = #{id,jdbcType=INTEGER}
+    where u_id = #{uId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.yc.bookshop.bean.CartExample">
     delete from cart
