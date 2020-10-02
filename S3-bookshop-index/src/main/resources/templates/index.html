@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>当当网首页</title>
+    <title>百草书屋网首页</title>
     <link href="css/global.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
@@ -25,12 +25,13 @@
     <div id="catList">
         <!--推荐分类-->
         <div class="book_sort">
-            <div class="book_sort_bg">推荐分类</div>
-            <div class="book_sort_bottom" style="border-bottom:0px;">外语 | 中小学教辅 |</div>
+            <!-- <div class="book_sort_bg">推荐分类</div>
+            <div class="book_sort_bottom" style="border-bottom:0px;">外语 | 中小学教辅 |</div> -->
+            <div class="book_sort_bottom" ><img  height="115px" width="170px" src="images/indexlogo1.png" alt="通栏广告图片" /></div>
         </div>
         <!--图书商品分类开始-->
         <div class="book_sort"  >
-            <div class="book_sort_bg"><img src="images/dd_book_cate_icon.gif" alt="图书" /> 图书商品分类</div>
+            <div class="book_sort_bg"  ><img src="images/dd_book_cate_icon.gif" alt="图书" /> 图书商品分类</div>
             <div class="book_cate" th:each="a : ${booktype}">[<a th:href="'product.html?id=' + ${a.btId}" th:text="${a.btName}">小说</a>]</div>
            
             
@@ -231,8 +232,9 @@
                 </dl>
             </div>
         </div>
+        
         <!--重点关注-->
-        <div class="book_sort"  width="960px">
+        <div class="book_sort"  >
             <div class="book_new">
                 <div class="book_left">重点关注</div>
             </div>
@@ -272,8 +274,54 @@
                         当当价：￥17.90</dd>
                 </dl>
             </div>
+            
         </div>
+        <div class="book_sort1"  width="960px">
+            <div class="book_new">
+                <div class="book_left">折扣商品</div>
+            </div>
+            <div class="book_class" style="height:380px;">
+                <dl id="book_focus">
+                    <dt><img src="images/dd_focus_1.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_2.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_3.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_4.jpg" alt="focus"/></dt>
+                    <dd><a href="#" class="blue">郑玉巧育儿经&middot;幼儿卷</a></dd>
+                    <dd><a href="#" class="blue">蹦蹦和跳跳的故事(全10册)</a></dd>
+                    <dd><a href="#" class="blue">人体自有大药(让每一个人都能变成...</a></dd>
+                    <dd><a href="#" class="blue">特效穴位使用手册</a></dd>
+                    <dd>定价：￥49.80<br />
+                        当当价：￥32.00</dd>
+                    <dd>定价：￥50.00<br />
+                        当当价：￥33.00</dd>
+                    <dd>定价：￥29.00<br />
+                        当当价：￥19.40</dd>
+                    <dd>定价：￥29.00<br />
+                        当当价：￥19.40</dd>
+                    <dt><img src="images/dd_focus_5.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_6.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_7.jpg" alt="focus"/></dt>
+                    <dt><img src="images/dd_focus_8.jpg" alt="focus"/></dt>
+                    <dd><a href="#" class="blue">《猫武士系列》（全6册）</a></dd>
+                    <dd><a href="#" class="blue">求医不如求己养生救命大宝典</a></dd>
+                    <dd><a href="#" class="blue">雅思词汇词根+联想记忆法</a></dd>
+                    <dd><a href="#" class="blue">等待Nemo的日子</a></dd>
+                    <dd>定价：￥120.00<br />
+                        当当价：￥79.20</dd>
+                    <dd>定价：￥198.00<br />
+                        当当价：￥116.90</dd>
+                    <dd>定价：￥28.00<br />
+                        当当价：￥18.70</dd>
+                    <dd>定价：￥26.00<br />
+                        当当价：￥17.90</dd>
+                </dl>
+            </div>
+            
+        </div>
+        
+        
     </div>
+    
     <!--中间部分结束-->
     <!--右侧部分开始-->
     <div id="silder">

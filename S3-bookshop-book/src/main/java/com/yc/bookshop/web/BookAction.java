@@ -48,6 +48,14 @@ public class BookAction {
 		return bMapper.selectByExample(exa);
 	}
 	
+	//模糊查询
+		@GetMapping("findAllBooks")
+		List<Book> findAllBooks() {
+			BookExample exa = new BookExample();
+			exa.createCriteria().andBIdGreaterThanOrEqualTo(100001);
+			return bMapper.selectByExample(exa);
+		}
+		
 	@GetMapping("findById")
 	List<Show> findByCnt(@RequestParam int b_id) {
 		ShowExample exa = new ShowExample();

@@ -84,7 +84,7 @@
             <div id="storyBooksssss"><!--使用javaScript显示图书列表--></div>
             <!--列表开始-->
             <div th:each="a : ${book}">
-            <div class="product_storyList_content_left"><img src="images/product_list_01.jpg" alt="图书列表"/></div>
+            <div class="product_storyList_content_left"><img height="90px" width="90px" th:src="${a.bImage1}" alt="图书列表"/></div>
             <div class="product_storyList_content_right">
 
                 <!-- <ul th:each="a : ${book}" >
@@ -101,9 +101,9 @@
                         <dl class="product_content_dd">
                             <dd><img th:href='shopping.html' src="images/product_buy_02.gif" alt="shopping"/></dd>
                             <dd ><a  href="shopping.html" target="_parent"><img  src="images/product_buy_01.gif" alt="shopping"/></a> </dd>
-                            <dd>折后价：<a th:text="${#numbers.formatDecimal(a.bPrice*0.59,1,2)}">￥13.10</a></dd>
+                            <dd>节省：<a th:text="${#numbers.formatDecimal(a.bPrice-a.bPrice*0.59,1,2)}">￥13.10</a></dd>
                             <dd>折扣：<span>59折</span></dd>
-                            <dd class="footer_dull_red"><span>￥18.90</span></dd>
+                            <dd class="footer_dull_red">￥<span th:text="${#numbers.formatDecimal(a.bPrice*0.59,1,2)}">￥18.90</span></dd>
                             <dd class="product_content_delete"><span >￥<span th:text="${a.bPrice}">32.00</span></span></dd>
                         </dl>
                     </li>

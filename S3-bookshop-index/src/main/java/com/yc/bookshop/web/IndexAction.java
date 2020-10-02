@@ -5,23 +5,16 @@ import java.util.List;
 
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.bookshop.bean.Cart;
-import com.yc.bookshop.bean.User;
 import com.yc.bookshop.web.remote.IUserAction;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.yc.bookshop.bean.Book;
-import com.yc.bookshop.bean.Booktype;
 import com.yc.bookshop.web.remote.IBookAction;
 
 
@@ -44,7 +37,17 @@ public class IndexAction {
 	public String tologin() {
 		return "login";
 	}
-	
+	@GetMapping(path= {"tobook","book.html"})
+	public String tobook() {
+		return "book";
+	}
+	/**
+	   @GetMapping(path= {"toshopping","shopping.html"})
+	public String toshopping() {
+		return "shopping";
+	}
+	 
+	 */
 	@GetMapping(path= {"toindex","index.html"})
 	public String toindex() {
 		return "index";
@@ -52,10 +55,7 @@ public class IndexAction {
 	
 	
 	
-	@GetMapping(path= {"toshopping","shopping.html"})
-	public String toshopping() {
-		return "shopping";
-	}
+	
 	
 	@GetMapping(path= {"toregister","register.html"})
 	public String toregister() {
@@ -68,12 +68,11 @@ public class IndexAction {
 	 * }
 	 */
 	
-	@GetMapping(path = { "index", "index.html","/" })
+	@GetMapping(path = { "index", "index.html" })
 	public String bookType( Model m) {
 		m.addAttribute("booktype", baction.findByBtid());
 		return "index";
 	}
-	
 	
 	@PostMapping(path = { "product.do", "product.html" })
 	public String books(String b_name, Model m) {

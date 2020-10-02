@@ -44,8 +44,13 @@
     border:solid 1px #999;
     margin-bottom:10px;
 }
+.book_sort1{
+    border:solid 1px #999;
+    margin-bottom:10px;
+    margin-left: 0px;
+}
 .book_sort_bg{
-    background-color:#fff0d9;
+    background-color:#f9b06f;
     padding-left:10px;
     color:#882D00;
     font-size:14px;
