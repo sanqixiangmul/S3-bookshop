@@ -2,10 +2,15 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 public class User {
     private Integer uId;
+    @NotEmpty(message = "昵称不能为空")
 
     private String uName;
+    @NotEmpty(message = "密码不能为空")
 
     private String uPwd;
 
@@ -20,8 +25,20 @@ public class User {
     private String uPhone;
 
     private String uAddress;
+    
+   
+    private String uEmail;
 
-    public Integer getuId() {
+
+    public String getuEmail() {
+		return uEmail;
+	}
+
+	public void setuEmail(String uEmail) {
+		this.uEmail = uEmail;
+	}
+
+	public Integer getuId() {
         return uId;
     }
 
@@ -34,7 +51,7 @@ public class User {
     }
 
     public void setuName(String uName) {
-        this.uName = uName == null ? null : uName.trim();
+        this.uName = uName ;
     }
 
     public String getuPwd() {

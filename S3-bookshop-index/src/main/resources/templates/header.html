@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.com"  xmlns="http://www.w3.org/1999/xhtml">
+
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>当当网站导航部分</title>
@@ -10,9 +12,14 @@
 </head>
 <body>
 <!--顶部开始-->
-<div>
+
 <div class="header_top">
-    <div class="header_top_left">您好！欢迎光临当当网 [<a href="login.html" target="_parent">登录</a> | <a href="register.html" target="_parent">免费注册</a>]</div>
+   <!--   <div class="header_top_left">您好！欢迎光临当当网 [<a href="login.html" target="_parent">登录</a> | <a href="register.html" target="_parent">免费注册</a>]</div> -->
+   
+    <div class="header_top_left"  th:if="${session.loginedUser==null}">您好！欢迎光临当当网 [<a href="login.html" target="_parent">登录</a> | <a href="register.html" target="_parent">免费注册</a>]</div>
+        <div class="header_top_left"  th:if="${session.loginedUser!=null}">您好！欢迎光临当当网 <span th:text="${session.loginedUser.uName}"></span><a class="link-regist" href="logout">[退出]</a></div>
+  
+   
     <div class="header_top_right">
         <ul>
             <li><a href="#" target="_self">帮助</a></li>

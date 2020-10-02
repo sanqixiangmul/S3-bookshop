@@ -164,3 +164,34 @@ $(function(){
         $("#city").html(html);
     });
 });
+function setAddr(){
+	alert("1111111111111");
+	//$("#uAddress").text(document.getElementById("province"));
+//	alert(	document.getElementById("city1").value);
+//	alert(document.getElementById("province").option.val)
+
+	//alert(	document.getElementById("email").value);
+	var options1=$("#province option:selected");  
+	//alert(options1.text()); 
+	console.info(options1.text());
+	var options2=$("#city option:selected");  
+	alert(options2.text()); 
+	//$("#uAddress").value=options1.text()+options2.text();
+	alert(options1.text()+options2.text());
+	
+	// $("#uAddress").attr("value",options1.text()+options2.text());
+	alert($("#uAddress").value);
+    $("#uAddress").val(options1.text()+options2.text());//赋值
+    document.getElementById("uAddress").value=options1.text()+options2.text();
+   a=options1.text()+options2.text();
+	alert( document.getElementById("uAddress").value);
+	//alert(a);
+   
+	
+	
+	
+	
+}
+
+
+
