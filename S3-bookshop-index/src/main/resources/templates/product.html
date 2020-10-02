@@ -23,9 +23,15 @@
     
     <div class="current_place" th:each="book : ${booktype}">您现在的位置：
     	<a th:href="index">当当图书</a> &gt;&gt; 
-    	<input type="hidden" name="id" th:value="*{commodity.id}" />
+
+    	<!-- <input type="hidden" name="id" th:value="*{commodity.id}" />
     	<a th:href="'product?btId=' + ${book.btId}" th:text="${book.btName}">小说 </a>&gt;&gt; 
-    	<!-- <a th:text="${book.btName}">财经</a> -->
+    	<a th:text="${book.btName}">财经</a> -->
+
+    	<a>小说 </a>&gt;&gt; 
+    	<a>财经</a>
+    	<!-- <a th:if="${book.btPid} == null" th:text="${book.btName}">小说 </a>&gt;&gt; 
+    	<a th:if="${book.}" th:text="${book.btName}">财经</a> -->
     </div>
     
     <!--左侧菜单开始-->
@@ -40,7 +46,7 @@
             </div>
         </div>
         <div class="product_catList_end">
-            <img src="images/product_01.gif" alt="shopping"/>
+            <img  src="images/product_01.gif" alt="shopping"/>
             <img src="images/product_02.gif" alt="shopping"/>
         </div>
     </div>
@@ -86,33 +92,41 @@
         <div id="product_storyList_content" class="product_storyList_content">
             <div id="storyBooksssss"><!--使用javaScript显示图书列表--></div>
             <!--列表开始-->
-            <div th:each="book,s : ${findByBtid1}">
+            <div th:each="a : ${book}">
             <div class="product_storyList_content_left"><img src="images/product_list_01.jpg" alt="图书列表"/></div>
             <div class="product_storyList_content_right">
-                <ul th:each="a : ${book}" >
+
+<!--                 <ul th:each="a : ${book}" >
                     <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${book.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+ -->
+
+                <!-- <ul th:each="a : ${book}" >
+                    <li class="product_storyList_content_dash" th:text="${a.bName}"><a href="#" class="blue_14"  >私募（首部披露资本博弈秘密的金融小说）</a></li> -->
+
+                <ul>
+                    <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${a.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+
                     <li>顾客评分：<img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_gray.gif" alt="star"/></li>
-                    <li>作　者：<a href="#" class="blue_14" th:text="${book.bAuthor}">郭现杰</a> 著</li>
-                    <li>出版社：<a href="#" class="blue_14" th:text="${book.bPublisher}">花山文艺出版社</a></li>
+                    <li>作　者：<a href="#" class="blue_14" th:text="${a.bAuthor}">郭现杰</a> 著</li>
+                    <li>出版社：<a href="#" class="blue_14" th:text="${a.bPublisher}">花山文艺出版社</a></li>
                     <li>出版时间：<a href="#" class="blue_14">2009年08月</a></li>
-                    <li><a href="#" class="blue_14" th:text="${book.bMark}">数年前，在一次股市的多、空之战中，以赵云狄、林康为首的私募基金―金鼎投资，和以王雨龙为首的私募基金，达成锁仓协议分食利益。殊料，以王雨龙为首的私募基金―鑫利投资背信弃义，导致金鼎投资惨败。以至...</a></li>
+                    <li><a href="#" class="blue_14" th:text="${a.bMark}">数年前，在一次股市的多、空之战中，以赵云狄、林康为首的私募基金―金鼎投资，和以王雨龙为首的私募基金，达成锁仓协议分食利益。殊料，以王雨龙为首的私募基金―鑫利投资背信弃义，导致金鼎投资惨败。以至...</a></li>
                     <li>
                         <dl class="product_content_dd">
-                            <dd><img src="images/product_buy_02.gif" alt="shopping"/></dd>
-                            <dd><img src="images/product_buy_01.gif" alt="shopping"/></dd>
-                            <dd>节省：<a>￥13.10</a></dd>
+                            <dd><img th:href='shopping.html' src="images/product_buy_02.gif" alt="shopping"/></dd>
+                            <dd ><a  href="shopping.html" target="_parent"><img  src="images/product_buy_01.gif" alt="shopping"/></a> </dd>
+                            <dd>折后价：<a th:text="${#numbers.formatDecimal(a.bPrice*0.59,1,2)}">￥13.10</a></dd>
                             <dd>折扣：<span>59折</span></dd>
                             <dd class="footer_dull_red"><span>￥18.90</span></dd>
-                            <dd class="product_content_delete"><span>￥32.00</span></dd>
+                            <dd class="product_content_delete"><span >￥<span th:text="${a.bPrice}">32.00</span></span></dd>
                         </dl>
                     </li>
                 </ul>
             </div>
             <div class="product_storyList_content_bottom"></div>
-           
-            </div>
-
-            <div>
+          
+           </div>
+           <div>
                 <dl class="product_content_dd">
                     <dd><img src="images/OK.gif" alt="ok"/></dd>
                     <dd>页</dd>
@@ -165,5 +179,5 @@ var vue = new Vue({
     <div class="footer_top"><a href="#" target="_parent" class="footer_dull_red">公司简介</a> | <a href="#" target="_parent" class="footer_dull_red">诚证英才</a> | <a href="#" target="_parent" class="footer_dull_red">网站联盟</a> | <a href="#" target="_parent" class="footer_dull_red">百货招商</a> | <a href="#" target="_parent" class="footer_dull_red">交易条款</a></div>
     <iframe th:replace="footer.html" height="50px" width="900px" frameborder="0"></iframe>
 </div>
-
+</body>
 </html>

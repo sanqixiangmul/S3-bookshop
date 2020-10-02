@@ -2,6 +2,7 @@ package com.yc.bookshop.bean;
 
 import java.util.Date;
 
+
 import javax.validation.constraints.NotNull;
 
 public class Book {

@@ -13,4 +13,12 @@ spring:
 
 logging:
    level:
+<<<<<<< HEAD
       com.yc.bookshop.dao: debug
+      
+mybatis:
+   configuration:
+      mapUnderscoreToCamelCase: true
+=======
+      com.yc.bookshop.dao: debug
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git

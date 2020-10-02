@@ -1,5 +1,5 @@
 server:
-   port: 8000
+   port: 8005
 
 spring:
   application:
@@ -30,7 +30,7 @@ hystrix:
          execution:
             isolation:
                thread:
-                  timeoutInMilliseconds: 60000
+                  timeoutInMilliseconds: 600003
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000

@@ -1,6 +1,6 @@
 package com.yc.bookshop.bean;
 
-public class Recommend {
+public class Recommend implements java.io.Serializable{
     private Integer rId;
 
     private Integer rType;
