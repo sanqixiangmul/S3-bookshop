@@ -5,16 +5,13 @@ import java.util.List;
 
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yc.bookshop.bean.Booktype;
 import com.yc.bookshop.bean.Cart;
 import com.yc.bookshop.web.remote.IUserAction;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,7 +61,17 @@ public class IndexAction {
 	public String tologin() {
 		return "login";
 	}
-	
+	@GetMapping(path= {"tobook","book.html"})
+	public String tobook() {
+		return "book";
+	}
+	/**
+	   @GetMapping(path= {"toshopping","shopping.html"})
+	public String toshopping() {
+		return "shopping";
+	}
+	 
+	 */
 	@GetMapping(path= {"toindex","index.html"})
 	public String toindex() {
 		return "index";
@@ -74,7 +81,6 @@ public class IndexAction {
 	/*
 	 * public String toproduct() { return "product"; }
 	 */	
-	
 
 	/*传值到页面
 	 * @GetMapping(path= {"test1","test1.html"}) public ModelAndView test1() {
@@ -82,7 +88,8 @@ public class IndexAction {
 	 * return mav; }
 	 */
 	
-	@GetMapping(path= {"product","product.html"}) 
+/*
+  @GetMapping(path= {"product","product.html"}) 
 	public String product(@Valid Booktype booktype,Errors errors, Model m) {
 		// 使用 FeIgn 远程调用 book 的服务
 		// 1 定义一个接口,用于访问远程服务
@@ -94,6 +101,13 @@ public class IndexAction {
 			m.addAttribute("booktype", baction.findByBtid());
 			List<Booktype> findByBtid2 = baction.findByBtid2(booktype.getBtId());
 			System.out.println("findByBtid2:"+findByBtid2);
+				m.addAttribute("findByBtid2", findByBtid2);
+			
+		}
+		
+		return "product";
+	}
+ 
 			
 	//		js  location.href . hash  ?  htpp://asss?id=1
 			
@@ -103,12 +117,10 @@ public class IndexAction {
 			 * System.out.println("findByBtid1:" + findByBtid1); // 推送给页面
 			 * m.addAttribute("findByBtid1", findByBtid1);
 			 */
-			m.addAttribute("findByBtid2", findByBtid2);
-			
-		}
 		
-		return "product";
-	}
+ 
+ 
+	
 	
 	@RequestMapping("/product/{btId}")
     public ModelAndView code(@PathVariable(value = "btId") String btId) {
@@ -140,12 +152,11 @@ public class IndexAction {
 	 * }
 	 */
 	
-	@GetMapping(path = { "index", "index.html","/" })
+	@GetMapping(path = { "index", "index.html" })
 	public String bookType( Model m) {
 		m.addAttribute("booktype", baction.findByBtid());
 		return "index";
 	}
-	
 	
 	@PostMapping(path = { "product.do", "product.html" })
 	public String books(String b_name, Model m) {

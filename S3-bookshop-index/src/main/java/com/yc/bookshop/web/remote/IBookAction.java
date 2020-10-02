@@ -44,6 +44,10 @@ public interface IBookAction {
 	
 	@PostMapping("book/findByBname")
 	List<Book> findByBname(@RequestParam String b_name);
+	
+	
+	@PostMapping("book/findAllBooks")
+	List<Book> findAllBooks();
 
 
 	
