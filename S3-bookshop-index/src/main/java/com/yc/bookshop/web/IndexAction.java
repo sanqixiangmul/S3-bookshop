@@ -16,6 +16,7 @@ import com.yc.bookshop.web.remote.IUserAction;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.yc.bookshop.web.remote.IBookAction;
+import com.yc.bookshop.web.remote.ICartAction;
 
 
 @Controller
@@ -26,6 +27,8 @@ public class IndexAction {
 	@Resource
 	private IBookAction baction;
 	
+	@Resource
+	private ICartAction caction;
 	
 	@GetMapping("/")
 	public String index() {
@@ -77,4 +80,11 @@ public class IndexAction {
 		return "shopping";
 	}
 
+
+	@GetMapping(path= {"clearCart.do","shopping.html"})
+	public String clearCart( @RequestParam int uid,Model m) {
+		m.addAttribute("cart",caction.clearCart(uid));
+	    return "shopping";
+		
+	}
 }
