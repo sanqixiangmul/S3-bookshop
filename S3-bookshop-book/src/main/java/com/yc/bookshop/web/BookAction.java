@@ -63,22 +63,23 @@ public class BookAction {
 		return cMapper.selectByExample(exa);
 	}
 
+	
 	@GetMapping("findByBtid1")
 	public List<Book> findByBtid1(@RequestBody Book book ) {
-		BookExample ex = new BookExample();
-		ex.createCriteria().andBtIdEqualTo(book.getBtId());
-		return bMapper.selectByExample(ex);
+		BookExample be = new BookExample();
+		be.createCriteria().andBtIdEqualTo(book.getBtId());
+		return bMapper.selectByExample(be);
 	}
 	
-	@GetMapping("findByBtid2")
-	public List<Booktype> findByBtid2(@RequestBody Booktype booktype) {
-		BooktypeExample exa = new BooktypeExample();
-		//当BtPid为空时，只查询为空的数据
-		if(booktype.getBtPid() == null) {
-			exa.createCriteria().andBtIdEqualTo(booktype.getBtId());
-		}else {
-			exa.createCriteria().andBtIdEqualTo(booktype.getBtPid());
-		}
-		return btMapper.selectByExample(exa);
+	@GetMapping(path  = "findByBtid2")
+	public List<Booktype> findByBtid2(@RequestParam int btId) {
+		BooktypeExample bte = new BooktypeExample();
+		//当BtPid不为空时，查询数据
+		bte.createCriteria().andBtPidEqualTo(btId);
+		//return (List<Booktype>) btMapper.selectByPrimaryKey(btId);
+		System.out.println(btMapper.selectByExample(bte));
+		return btMapper.selectByExample(bte);
 	}
+	
+	
 }

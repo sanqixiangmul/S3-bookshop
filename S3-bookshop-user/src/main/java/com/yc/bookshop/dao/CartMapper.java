@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Param;
 public interface CartMapper {
     long countByExample(CartExample example);
 
-    int deleteByExample(CartExample example);
 
     int deleteByPrimaryKey(Integer id);
 
@@ -27,4 +26,5 @@ public interface CartMapper {
     int updateByPrimaryKeySelective(Cart record);
 
     int updateByPrimaryKey(Cart record);
+
 }

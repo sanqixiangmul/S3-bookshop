@@ -6,6 +6,8 @@
     <link href="css/global.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
 </head>
 <body>
@@ -18,8 +20,14 @@
 <!--中间部分开始-->
 <div id="main">
     <div class="dd_index_top_adver"><img src="images/dd_index_top_adver.jpg" alt="通栏广告图片" /></div>
-    <div class="current_place">您现在的位置：
+    
+    <div class="current_place" th:each="book : ${booktype}">您现在的位置：
     	<a th:href="index">当当图书</a> &gt;&gt; 
+
+    	<!-- <input type="hidden" name="id" th:value="*{commodity.id}" />
+    	<a th:href="'product?btId=' + ${book.btId}" th:text="${book.btName}">小说 </a>&gt;&gt; 
+    	<a th:text="${book.btName}">财经</a> -->
+
     	<a>小说 </a>&gt;&gt; 
     	<a>财经</a>
     	<!-- <a th:if="${book.btPid} == null" th:text="${book.btName}">小说 </a>&gt;&gt; 
@@ -27,8 +35,8 @@
     </div>
     
     <!--左侧菜单开始-->
-    <div id="product_left" >
-        <div id="product_catList" th:each="book,s : ${findByBtid}">
+    <div id="product_left" th:each="book : ${findByBtid2}">
+        <div id="product_catList" >
             <div class="product_catList_top">浏览同级分类</div>
             <div id="product_catList_class">
             	<li> 
@@ -42,7 +50,8 @@
             <img src="images/product_02.gif" alt="shopping"/>
         </div>
     </div>
-   
+    
+    
     <!--右侧内容开始-->
     <div id="product_storyList">
         <div id="product_storyList_top">
@@ -87,11 +96,16 @@
             <div class="product_storyList_content_left"><img height="90px" width="90px" th:src="${a.bImage1}" alt="图书列表"/></div>
             <div class="product_storyList_content_right">
 
+<!--                 <ul th:each="a : ${book}" >
+                    <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${book.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+ -->
+
                 <!-- <ul th:each="a : ${book}" >
                     <li class="product_storyList_content_dash" th:text="${a.bName}"><a href="#" class="blue_14"  >私募（首部披露资本博弈秘密的金融小说）</a></li> -->
 
                 <ul>
                     <li class="product_storyList_content_dash"><a href="#" class="blue_14" th:text="${a.bName}">私募（首部披露资本博弈秘密的金融小说）</a></li>
+
                     <li>顾客评分：<img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_red.gif" alt="star"/><img src="images/star_gray.gif" alt="star"/></li>
                     <li>作　者：<a href="#" class="blue_14" th:text="${a.bAuthor}">郭现杰</a> 著</li>
                     <li>出版社：<a href="#" class="blue_14" th:text="${a.bPublisher}">花山文艺出版社</a></li>
@@ -110,11 +124,9 @@
                 </ul>
             </div>
             <div class="product_storyList_content_bottom"></div>
-            
-           
-
-            </div>
-            <div>
+          
+           </div>
+           <div>
                 <dl class="product_content_dd">
                     <dd><img src="images/OK.gif" alt="ok"/></dd>
                     <dd>页</dd>
@@ -125,7 +137,7 @@
                         <ul id="product_page">
                             <li><a href="#" class="product_page">1</a></li>
                             <li><a href="#" class="product_page">2</a></li>
-                            <li> <a href="#" class="product_page">3</a></li>
+                            <li><a href="#" class="product_page">3</a></li>
                             <li> ...</li>
                             <li><a href="#" class="product_page">14</a></li>
                             <li><a href="#" class="product_page">15</a></li>
@@ -139,6 +151,27 @@
     </div>
     <!--右侧内容结束-->
 </div>
+<script type="text/javascript">
+var vue = new Vue({
+	el : "#main",
+	created: function(){
+		this.show();
+	},
+	methods : {
+		show(){
+			var  id = location.hash.substring(1) ;
+			var params = new URLSearchParams();				
+			params.append('cid', id);
+			params.append('page',this.currentPage);
+			params.append('op', 'FYquery');		
+			axios.post('ProductServlet.do', params).then( res =>{
+				this.list1=res.data.list;
+				this.pagesCount=res.data.pages;
+			});	
+		}
+	}
+});
+</script>
 
 
 <!--网站版权部分开始-->

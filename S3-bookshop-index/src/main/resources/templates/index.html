@@ -31,8 +31,13 @@
         </div>
         <!--图书商品分类开始-->
         <div class="book_sort"  >
+<<<<<<< HEAD
             <div class="book_sort_bg"  ><img src="images/dd_book_cate_icon.gif" alt="图书" /> 图书商品分类</div>
             <div class="book_cate" th:each="a : ${booktype}">[<a th:href="'product.html?id=' + ${a.btId}" th:text="${a.btName}">小说</a>]</div>
+=======
+            <div class="book_sort_bg"><img src="images/dd_book_cate_icon.gif" alt="图书" /> 图书商品分类</div>
+            <div class="book_cate" th:each="a : ${booktype}">[<a th:href="'product?btId=' + ${a.btId}" th:text="${a.btName}">小说</a>]</div>
+>>>>>>> branch 'master' of https://github.com/sanqixiangmul/S3-bookshop.git
            
             
            

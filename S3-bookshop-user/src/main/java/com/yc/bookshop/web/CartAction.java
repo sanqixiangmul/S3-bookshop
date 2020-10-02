@@ -2,6 +2,7 @@ package com.yc.bookshop.web;
 
 import java.util.List;
 
+
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,4 +31,13 @@ public class CartAction {
 		
 		
 	}
+	
+	@GetMapping("clearCart")
+	int clearCart(@RequestParam int uid) {
+		CartExample exa=new CartExample();
+		int c=cMapper.deleteByPrimaryKey(uid);
+		return c;
+	}
+	
+	
 }
