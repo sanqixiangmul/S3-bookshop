@@ -4,7 +4,7 @@ server:
 # 定义当前服务名
 spring:
    application:
-      name: cruser
+      name: bsuser
    datasource:
       url: jdbc:mysql://127.0.0.1/bookshop?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
       username: root
@@ -13,4 +13,9 @@ spring:
 
 logging:
    level:
-      com.yc.crbook.dao: debug
+      com.yc.bookshop.dao: debug
+      
+mybatis:
+   configuration:
+      mapUnderscoreToCamelCase: true
+      com.yc.bookshop.dao: debug
